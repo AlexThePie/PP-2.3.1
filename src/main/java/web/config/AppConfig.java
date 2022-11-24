@@ -26,16 +26,16 @@ public class AppConfig {
 
 
     @Autowired
-    private Environment env;
+    private Environment environment;
 
 
     @Bean
     public DataSource getDataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName(env.getProperty("db.driver"));
-        dataSource.setUrl(env.getProperty("db.url"));
-        dataSource.setUsername(env.getProperty("db.username"));
-        dataSource.setPassword(env.getProperty("db.password"));
+        dataSource.setDriverClassName(environment.getProperty("db.driver"));
+        dataSource.setUrl(environment.getProperty("db.url"));
+        dataSource.setUsername(environment.getProperty("db.username"));
+        dataSource.setPassword(environment.getProperty("db.password"));
         return dataSource;
     }
 
@@ -59,10 +59,10 @@ public class AppConfig {
     }
 
     private Properties hibernateProperties() {
-        Properties props = new Properties();
-        props.put("hibernate.show_sql", env.getProperty("hibernate.show_sql"));
-        props.put("hibernate.hbm2ddl.auto", env.getProperty("hibernate.hbm2ddl.auto"));
-        props.put("hibernate.dialect", env.getProperty("hibernate.dialect"));
-        return props;
+        Properties properties = new Properties();
+        properties.put("hibernate.show_sql", environment.getProperty("hibernate.show_sql"));
+        properties.put("hibernate.hbm2ddl.auto", environment.getProperty("hibernate.hbm2ddl.auto"));
+        properties.put("hibernate.dialect", environment.getProperty("hibernate.dialect"));
+        return properties;
     }
 }
