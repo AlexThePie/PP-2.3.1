@@ -33,12 +33,7 @@ public class UserDaoImpl implements UserDao{
     @Override
     public void changeUser(User user) {
         entityManager.merge(user);
-        /*entityManager.createQuery("UPDATE User u SET u.firstName = :fn, u.lastName= :ln, u.email = :em where u.id = :id")
-                .setParameter("fn",user.getFirstName())
-                .setParameter("ln",user.getLastName())
-                .setParameter("em",user.getEmail())
-                .setParameter("id",user.getId())
-                .executeUpdate();*/
+
 
     }
 
@@ -49,8 +44,6 @@ public class UserDaoImpl implements UserDao{
 
     @Override
     public User findById(Long id) {
-        /*User user = (User) entityManager.createQuery("FROM User u WHERE u.id = :id").setParameter("id",id).getSingleResult();
-        return user;*/
         return entityManager.find(User.class, id);
     }
 }
