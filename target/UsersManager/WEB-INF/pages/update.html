@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update user</title>
+    <style>
+        table {
+            font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+            text-align: left;
+            border-collapse: separate;
+            border-spacing: 5px;
+            background: #ECE9E0;
+            color: #656665;
+            border: 16px solid #ECE9E0;
+            border-radius: 20px;
+        }
+        th {
+            font-size: 18px;
+            padding: 10px;
+        }
+        td {
+            background: #F5D7BF;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<form action="#" th:action="@{/update}" th:object="${user}" method="post">
+    <label for="id">ID</label>
+    <input readonly type="number" th:field="*{id}" id="id" placeholder="ID">
+    <br/>
+    <label for="firstName">First Name</label>
+    <input type="text" th:field="*{firstName}" id="firstName" placeholder="First Name">
+    <br/>
+    <label for="lastName">Last Name</label>
+    <input type="text" th:field="*{lastName}" id="lastName" placeholder="Last Name">
+    <br/>
+    <label for="firstName">E-mail</label>
+    <input type="text" th:field="*{email}" id="email" placeholder="E-mail">
+    <br/>
+    <input type="submit" value="Update User">
+</form>
+
+</body>
+</html>
