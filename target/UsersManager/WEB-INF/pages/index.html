@@ -29,14 +29,14 @@
 <div th:switch="${users}">
     <h2 th:case="null">No users found!</h2>
     <div th:case="*">
-        <h2>Users</h2>
+        <h2>Пользователи</h2>
         <table>
             <thead>
             <tr>
-                <th>Id</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>E-mail</th>
+                <th>ID</th>
+                <th>ИМЯ</th>
+                <th>ФАМИЛИЯ</th>
+                <th>E-Mail</th>
             </tr>
             </thead>
             <tbody>
@@ -45,14 +45,14 @@
                 <td th:text="${user.firstName}"></td>
                 <td th:text="${user.lastName}"></td>
                 <td th:text="${user.email}"></td>
-                <td><a th:href="@{update/{id}(id=${user.id})}">Edit</a></td>
-                <td><a th:href="@{delete/{id}(id=${user.id})}">Delete</a></td>
+                <td><a th:href="@{update/{id}(id=${user.id})}">ИЗМЕНИТЬ</a></td>
+                <td><a th:href="@{delete/{id}(id=${user.id})}">УДАЛИТЬ</a></td>
             </tr>
             </tbody>
         </table>
     </div>
 
-    <p><a href="create">Create user</a></p>
+    <p><a href="create">ДОБАВИТЬ ПОЛЬЗОВАТЕЛЯ</a></p>
 </div>
 
 </body>

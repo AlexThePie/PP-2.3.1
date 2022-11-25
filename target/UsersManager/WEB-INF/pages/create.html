@@ -4,39 +4,44 @@
     <meta charset="UTF-8">
     <title>Create user</title>
     <style>
+        body {
+            font-size: x-large;
+        }
+
         table {
-            font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
-            text-align: left;
-            border-collapse: separate;
-            border-spacing: 5px;
-            background: #ECE9E0;
-            color: #656665;
-            border: 16px solid #ECE9E0;
-            border-radius: 20px;
+            border-collapse: collapse;
         }
-        th {
-            font-size: 18px;
-            padding: 10px;
+
+        th, td {
+            border: 1px solid;
+            align-content: center;
         }
-        td {
-            background: #F5D7BF;
-            padding: 10px;
+
+        tr:hover td {
+            background-color: lightblue;
         }
+
+        .no-border {
+            border: 0;
+        }
+
     </style>
 </head>
 <body>
 <form action="#" method="post" th:action="@{/create}" th:object="${user}" >
-    <label for="firstName">First name</label>
+    <label for="firstName">ИМЯ</label>
     <input type="text" th:field="*{firstName}" id="firstName" placeholder= "First Name">
     <br/>
-    <label for="lastName">Last name</label>
+    <br/>
+    <label for="lastName">ФАМИЛИЯ</label>
     <input type="text" th:field="*{lastName}" id="lastName" placeholder= "Last Name">
     <br/>
-    <label for="email">E-mail</label>
+    <br/>
+    <label for="email">E-Mail</label>
     <input type="text" th:field="*{email}" id="email" placeholder= "E-mail">
     <br/>
     <br/>
-    <input type="submit" value="Create user">
+    <input type="submit" value="СОЗДАТЬ">
 </form>
 
 </body>
